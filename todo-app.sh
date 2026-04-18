@@ -10,16 +10,17 @@ if [ "$1" = "list" ]; then
   exit 0
 fi
 
-if [ -z "$2" ]; then
-  cat ~/Projects/Todo-list/todo.txt
-  exit 0
-elif [ "$1" = "add" ]; then
+if [ "$1" = "add" ]; then
+  if [ -z "$2" ]; then
+    echo "You can't add nothing"
+    exit 0
+  fi
   echo "- [] $2" >>/home/devax/Projects/Todo-list/todo.txt
   exit 0
 elif [ "$1" = "done" ]; then
   sed -i "s/- \[\] $2/- [x] $2/" ~/Projects/Todo-list/todo.txt
   exit 0
 elif [ "$1" = "remove" ]; then
-  sed -i "\|$2|d" ~/Projects/Todo-list/todo.txt
+  sed -i "\|- \[.\] $2|d" ~/Projects/Todo-list/todo.txt
   exit 0
 fi

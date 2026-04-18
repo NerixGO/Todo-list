@@ -1,3 +1,0 @@
-- [] Learn Git
-- [] Learn Linux
-- [] Learn DevOps

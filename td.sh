@@ -12,7 +12,7 @@ if [ "$1" = "-h" ]; then
   exit 1
 fi
 
-if [ -z "$1"]; then
+if [ -z "$1" ]; then
   cat ~/.local/share/td/td.txt
   exit 0
 fi

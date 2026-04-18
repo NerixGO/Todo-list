@@ -9,10 +9,11 @@ Or type “td -h” to see help text
 
 To install paste this into your terminal
 
+```bash
 git clone https://github.com/NerixGO/Todo-list.git
 cd Todo-list
 ./install.sh
 cd ..
 rm -rf Todo-list
-
+```
 And then you are free to use To-Do list!

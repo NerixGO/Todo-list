@@ -1,8 +1,20 @@
 #!/bin/bash
 
-if [[ -z $1 ]]; then
-  printf "\n ----- \n Use: “td list” to show task list \n Use: “td add [name]” to add task  \n Use: "td done [name]" to do task \n Use: "td remove [name]" to remove task\n ----- \n"
+if [ "$1" = "-h" ]; then
+  printf "\n -----
+  Use: “td list” to show task list 
+  Use: “td add [name]” to add task  
+  Use: “td done [name]” to do task 
+  Use: “td done [name]” to remove task
+
+  Or type “td -h” to see this text
+  \n ----- \n\n"
   exit 1
+fi
+
+if [ -z "$1"]; then
+  cat ~/.local/share/td/td.txt
+  exit 0
 fi
 
 if [ "$1" = "list" ]; then

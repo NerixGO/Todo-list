@@ -13,12 +13,12 @@ if [ "$1" = "-h" ]; then
 fi
 
 if [ -z "$1" ]; then
-  cat ~/.local/share/td/td.txt
+  cat -n ~/.local/share/td/td.txt
   exit 0
 fi
 
 if [ "$1" = "list" ]; then
-  cat ~/.local/share/td/td.txt
+  cat -n ~/.local/share/td/td.txt
   exit 0
 fi
 
@@ -30,6 +30,10 @@ if [ "$1" = "add" ]; then
   echo "- [] $2" >>~/.local/share/td/td.txt
   exit 0
 elif [ "$1" = "done" ]; then
+  if [ "$2" = "-n" ]; then
+    sed -i "${3}d/" ~/.local/share/td/td.txt
+    exit 0
+  fi
   sed -i "s/- \[\] $2/- [x] $2/" ~/.local/share/td/td.txt
   exit 0
 elif [ "$1" = "remove" ]; then

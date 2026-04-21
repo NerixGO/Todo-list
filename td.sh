@@ -1,12 +1,11 @@
 #!/bin/bash
 
-if [ "$1" = "-h" ]; then
+if [ "$1" = "-h" || "$1" = "--help" ]; then
   printf "\n -----
   Use: “td list” to show task list 
   Use: “td add [name]” to add task  
   Use: “td done [name]” to do task 
-  Use: “td done [name]” to remove task
-
+  Use: “td remove [name]” to remove task
   Or type “td -h” to see this text
   \n ----- \n\n"
   exit 1
